@@ -1,0 +1,4 @@
+spring:
+  messages:
+    basename: valid/base,valid/test
+    encoding: UTF-8

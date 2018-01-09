@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zyf.dc.mapper.test.TestMapper">
+    <resultMap id="BaseResultMap" type="com.zyf.dc.entity.test.Test">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="create_id" jdbcType="INTEGER" property="createId"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="user_type" jdbcType="BIT" property="userType"/>
+    </resultMap>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from test
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.zyf.dc.entity.test.Test">
+        insert into test (name, create_id, create_time,
+        user_type)
+        values (#{name,jdbcType=VARCHAR}, #{createId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP},
+        #{userType,jdbcType=BIT})
+    </insert>
+    <update id="updateByPrimaryKey" parameterType="com.zyf.dc.entity.test.Test">
+        update test
+        set name = #{name,jdbcType=VARCHAR},
+        create_id = #{createId,jdbcType=INTEGER},
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+        user_type = #{userType,jdbcType=BIT}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select id, name, create_id, create_time, user_type
+        from test
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select id, name, create_id, create_time, user_type
+        from test
+    </select>
+</mapper>
