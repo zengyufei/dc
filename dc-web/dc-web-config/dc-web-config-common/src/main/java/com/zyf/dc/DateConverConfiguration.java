@@ -7,8 +7,8 @@
  */
 package com.zyf.dc;
 
-import com.zyf.dc.config.convers.StringToCalendarConverter;
-import com.zyf.dc.config.convers.StringToDateConverter;
+import com.zyf.dc.convers.StringToCalendarConverter;
+import com.zyf.dc.convers.StringToDateConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.support.GenericConversionService;
@@ -20,7 +20,6 @@ import javax.annotation.PostConstruct;
 /**
  * date 类型参数绑定注册
  * @author zengyufei
- * @create 2017-11-6
  * @since 1.0.0
  */
 @Configuration

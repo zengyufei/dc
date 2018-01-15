@@ -15,10 +15,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // 禁用 CSRF 保护
                 .csrf().disable()
                 .authorizeRequests()
+
                 // 配置那些路径可以不用权限访问
+                .antMatchers("/v2/api-docs", "/configuration/ui", "/swagger-resources/**",
+                        "/configuration/security", "/swagger-ui.html", "/webjars/**").permitAll()
                 .antMatchers("/login").permitAll()
                 .antMatchers("/test/**").permitAll()
                 .antMatchers("/admin/**").hasRole("超级管理员")
+
                 // 任何访问都必须授权
                 .anyRequest().fullyAuthenticated()
                 .and()

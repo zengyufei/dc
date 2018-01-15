@@ -13,4 +13,12 @@
 
     <name>订餐系统-vo-输入输出类</name>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.zyf.code</groupId>
+            <artifactId>dc-common-base</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
 </project>

@@ -28,6 +28,10 @@
 
     </settings>
 
+    <!-- models 对应别名-->
+    <typeAliases>
+    </typeAliases>
+
     <!-- 类型转换注册 -->
     <typeHandlers>
         <typeHandler handler="com.zyf.dc.typeHandler.DateTypeHandler"/>

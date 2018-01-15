@@ -22,10 +22,10 @@
     <dependencies>
         <dependency>
             <groupId>com.zyf.code</groupId>
-            <artifactId>dc-web-config-single</artifactId>
+            <artifactId>dc-web-starter</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-        
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

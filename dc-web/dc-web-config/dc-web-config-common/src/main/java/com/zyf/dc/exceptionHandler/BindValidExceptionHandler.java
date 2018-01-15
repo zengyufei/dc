@@ -10,7 +10,7 @@
 package com.zyf.dc.exceptionHandler;
 
 import com.zyf.dc.base.Msg;
-import com.zyf.dc.config.exceptions.ValidError;
+import com.zyf.dc.exceptions.ValidError;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

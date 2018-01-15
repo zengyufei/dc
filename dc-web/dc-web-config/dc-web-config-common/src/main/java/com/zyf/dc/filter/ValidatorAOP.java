@@ -7,6 +7,7 @@ package com.zyf.dc.filter;
  * Description: service 参数验证拦截器，基于 JSR303
  */
 
+import com.zyf.dc.exceptions.ValidError;
 import com.zyf.dc.utils.ValidUtil;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -17,6 +18,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 
@@ -33,11 +37,11 @@ public class ValidatorAOP {
     private ValidUtil validUtil;
 
     /**
-     *  定义拦截规则：拦截  com.evergrande.itmc.servic  包下面的所有类中，有 @Service 注解的方法。
+     *  定义拦截规则：拦截  com.evergrande.itmc.servic  包下面的所有类中，有 @Service  和 @Validated 注解的方法。
      */
-    @Pointcut("execution(* com.zyf.dc.service..*(..)) " +
-            "and @annotation(org.springframework.stereotype.Service) " +
-            "and @annotation(org.springframework.validation.annotation.Validated)")
+    @Pointcut("execution(* com.evergrande.itmc.service..*(..)) " +
+            "&& @annotation(org.springframework.stereotype.Service) " +
+            "&& @annotation(org.springframework.validation.annotation.Validated)")
     public void controllerMethodPointcut() {
     }
 
@@ -53,16 +57,41 @@ public class ValidatorAOP {
 
         for (int i = 0; i < args.length; i++) {
             for (Annotation annotation : argAnnotations[i]) {
+                String errorMessage = "";
+                String declaringTypeName = methodSignature.getDeclaringTypeName();
+                String name = methodSignature.getName();
                 if (Validated.class.isInstance(annotation)) {
                     Validated validated = (Validated) annotation;
                     Class<?>[] groups = validated.value();
                     validUtil.validAndReturnFirstErrorTips(args[i], groups);
+                } else if (Min.class.isInstance(annotation)) {
+                    Min min = (Min) annotation;
+                    long value = min.value();
+                    String message = min.message();
+                    if (Long.parseLong(args[i].toString()) < value) {
+                        errorMessage = declaringTypeName + "." + name + "-" + message;
+                        throw new ValidError(errorMessage);
+                    }
+                } else if (NotNull.class.isInstance(annotation)) {
+                    NotNull notNull = (NotNull) annotation;
+                    String message = notNull.message();
+                    if (args[i] == null) {
+                        errorMessage = declaringTypeName + "." + name + "-" + message;
+                        throw new ValidError(errorMessage);
+                    }
+                } else if (NotBlank.class.isInstance(annotation)) {
+                    NotBlank notBlank = (NotBlank) annotation;
+                    String message = notBlank.message();
+                    if (args[i] == null || !"".equals(args[i].toString())) {
+                        errorMessage = declaringTypeName + "." + name + "-" + message;
+                        throw new ValidError(errorMessage);
+                    }
                 }
             }
         }
         try {
             return pjp.proceed(args);
-        } catch (Throwable throwable) {
+        } catch (Throwable ignored) {
         }
         return true;
     }
