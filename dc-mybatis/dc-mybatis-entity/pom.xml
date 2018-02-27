@@ -10,7 +10,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>dc-mybatis-entity</artifactId>
+    <packaging>jar</packaging>
 
-    <name>订餐系统-mybatis-实体</name>
+    <name>${project.name}-mybatis-实体模块</name>
 
 </project>

@@ -13,7 +13,7 @@
 
     <packaging>pom</packaging>
 
-    <name>订餐系统-api</name>
+    <name>${project.name}-api</name>
     <modules>
         <module>dc-service</module>
         <module>dc-service-impl</module>

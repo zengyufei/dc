@@ -7,19 +7,35 @@
  */
 package com.zyf.dc.base;
 
+import com.baomidou.mybatisplus.annotations.TableField;
+import com.baomidou.mybatisplus.annotations.TableLogic;
+import com.baomidou.mybatisplus.annotations.Version;
+import com.baomidou.mybatisplus.enums.FieldFill;
+
 import java.util.Date;
 
 public class BaseEntity {
 
     protected long id;
 
+    @TableField(fill = FieldFill.INSERT)
     protected long createId;
 
-    protected long updateId;
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    protected long modifyId;
 
+    @TableField(fill = FieldFill.INSERT)
     protected Date createTime;
 
+    @TableField(fill = FieldFill.INSERT_UPDATE)
     protected Date updateTime;
+
+    @TableField(fill = FieldFill.INSERT)
+    @TableLogic
+    protected boolean deleteFlag;
+
+    @Version
+    private Integer version;
 
     public long getId() {
         return id;
@@ -37,12 +53,12 @@ public class BaseEntity {
         this.createId = createId;
     }
 
-    public long getUpdateId() {
-        return updateId;
+    public long getModifyId() {
+        return modifyId;
     }
 
-    public void setUpdateId(long updateId) {
-        this.updateId = updateId;
+    public void setModifyId(long modifyId) {
+        this.modifyId = modifyId;
     }
 
     public Date getCreateTime() {
@@ -59,5 +75,13 @@ public class BaseEntity {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public boolean isDeleteFlag() {
+        return deleteFlag;
+    }
+
+    public void setDeleteFlag(boolean deleteFlag) {
+        this.deleteFlag = deleteFlag;
     }
 }

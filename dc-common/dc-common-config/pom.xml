@@ -10,6 +10,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>dc-common-config</artifactId>
+    <packaging>jar</packaging>
+
+    <name>${project.name}-common-配置</name>
 
     <dependencies>
         <dependency>

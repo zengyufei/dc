@@ -11,5 +11,7 @@
 
     <artifactId>dc-test-service</artifactId>
 
+    <name>${project.name}-test-接口测试模块</name>
+
 
 </project>

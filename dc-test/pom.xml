@@ -13,7 +13,8 @@
 
     <packaging>pom</packaging>
 
-    <name>订餐系统-test-junit</name>
+    <name>${project.name}-test</name>
+
     <modules>
         <module>dc-test-service</module>
         <module>dc-test-controller</module>

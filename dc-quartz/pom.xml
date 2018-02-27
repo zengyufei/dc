@@ -10,8 +10,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>dc-quartz</artifactId>
+    <packaging>jar</packaging>
 
-    <name>订餐系统-quartz-定时系统</name>
+    <name>${project.name}-quartz-定时模块</name>
 
     <dependencies>
         <dependency>

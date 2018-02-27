@@ -10,6 +10,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>dc-web-config-common</artifactId>
+    <packaging>jar</packaging>
+
+    <name>${project.name}-web-config-公共抽象配置</name>
 
     <dependencies>
         <dependency>

@@ -67,6 +67,22 @@ public class Msg {
         this.data = data;
     }
 
+    public void setSuccess(boolean success) {
+        this.success = success;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public void setCode(long code) {
+        this.code = code;
+    }
+
     public boolean isSuccess() {
         return this.success;
     }

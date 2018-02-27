@@ -1,13 +1,10 @@
 package com.zyf.dc.service.sys;
 
 import com.zyf.dc.base.Msg;
-import com.zyf.dc.vo.sys.UserVo;
+import com.zyf.dc.entity.sys.User;
 
 public interface UserService {
 
-    Msg get(long id);
-
-    Msg list(UserVo userVo);
-
+    Msg list(User user);
 
 }

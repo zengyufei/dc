@@ -13,8 +13,8 @@
 
     <packaging>pom</packaging>
 
-    <name>订餐系统-web-config</name>
-    
+    <name>${project.name}-web-config</name>
+
     <modules>
         <module>dc-web-config-single</module>
         <module>dc-web-config-common</module>

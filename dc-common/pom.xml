@@ -13,12 +13,37 @@
 
     <packaging>pom</packaging>
 
-    <name>订餐系统-common</name>
+    <name>${project.name}-common</name>
     <modules>
         <module>dc-common-vo</module>
         <module>dc-common-utils</module>
         <module>dc-common-config</module>
         <module>dc-common-base</module>
     </modules>
+
+    <dependencies>
+        <!-- mybatis-plus begin -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatisplus-spring-boot-starter</artifactId>
+            <version>${mybatisplus-spring-boot-starter.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus</artifactId>
+            <version>${mybatisplus.version}</version>
+        </dependency>
+        <!-- mybatis-plus end -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.0</version>
+        </dependency>
+    </dependencies>
 
 </project>

@@ -11,5 +11,6 @@
 
     <artifactId>dc-test-controller</artifactId>
 
+    <name>${project.name}-test-控制层测试模块</name>
 
 </project>

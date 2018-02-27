@@ -10,13 +10,20 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>dc-web-starter</artifactId>
+    <packaging>jar</packaging>
 
-    <name>订餐系统-web-启动</name>
+    <name>${project.name}-web-启动模块</name>
 
     <dependencies>
         <dependency>
             <groupId>com.zyf.code</groupId>
             <artifactId>dc-web-config-single</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.zyf.code</groupId>
+            <artifactId>dc-web-controller</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
@@ -27,20 +34,20 @@
             <properties>
                 <active>dev</active>
             </properties>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
         </profile>
         <profile>
             <id>prod</id>
             <properties>
                 <active>prod</active>
             </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
         </profile>
     </profiles>
 
     <build>
-        <finalName>albedo-boot-web-starter</finalName>
+        <finalName>dc-web-starter</finalName>
         <resources>
             <resource>
                 <directory>${basedir}/../../dc-ui/src/main/webapp</directory>

@@ -1,0 +1,6 @@
+token:
+  secret: secret # token 加密密钥
+  expiration: 604800 # token 过期时间，以秒为单位，604800 是 一星期
+  header: X_Auth_Token
+
+

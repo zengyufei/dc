@@ -10,11 +10,38 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>dc-web-security</artifactId>
+    <packaging>jar</packaging>
+
+    <name>${project.name}-web-安全模块</name>
 
     <dependencies>
         <dependency>
+            <groupId>com.zyf.code</groupId>
+            <artifactId>dc-common-base</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.zyf.code</groupId>
+            <artifactId>dc-mybatis-entity</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.7.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>1.3.0</version>
         </dependency>
     </dependencies>
 

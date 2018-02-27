@@ -10,8 +10,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>dc-service-impl</artifactId>
+    <packaging>jar</packaging>
 
-    <name>订餐系统-接口实现</name>
+    <name>${project.name}-接口实现模块</name>
 
     <dependencies>
         <dependency>

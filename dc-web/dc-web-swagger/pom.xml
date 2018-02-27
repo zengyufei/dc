@@ -10,8 +10,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>dc-web-swagger</artifactId>
+    <packaging>jar</packaging>
 
-    <name>订餐系统-web-接口文档</name>
+    <name>${project.name}-web-接口文档模块</name>
 
     <dependencies>
         <dependency>

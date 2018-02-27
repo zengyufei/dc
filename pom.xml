@@ -15,19 +15,20 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>dc-mybatis</module>
-        <module>dc-common</module>
         <module>dc-api</module>
-        <module>dc-web</module>
+        <module>dc-common</module>
+        <module>dc-mybatis</module>
         <module>dc-quartz</module>
         <module>dc-test</module>
+        <module>dc-web</module>
     </modules>
 
-    <name>订餐系统</name>
+    <name>${project.name}</name>
     <url>https://github.com/zengyufei</url>
     <inceptionYear>2018</inceptionYear>
 
     <properties>
+        <project.name>订餐系统</project.name>
         <spring.boot.version>2.0.0.M7</spring.boot.version>
         <mysql.version>5.1.44</mysql.version>
         <mybatis.spring.boot.version>1.1.1</mybatis.spring.boot.version>
@@ -41,6 +42,9 @@
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
         <jdk.version>1.8</jdk.version>
         <compiler.encoding>UTF-8</compiler.encoding>
+
+        <mybatisplus-spring-boot-starter.version>1.0.5</mybatisplus-spring-boot-starter.version>
+        <mybatisplus.version>2.1.8</mybatisplus.version>
     </properties>
 
     <dependencies>
@@ -82,21 +86,16 @@
     </profiles>
 
     <build>
-        <finalName>ROOT</finalName>
-        <!-- 打包的时候对 resources 的文件进行拦截 (根据 maven 传入的不同的环境参数打包的时候会对 application 的配置文件进行拦截)-->
         <resources>
             <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
+                <directory>src/main/java</directory>
                 <includes>
-                    <include>mapper/*</include>
-                    <include>config/*</include>
-                    <include>valid/*</include>
-                    <include>logConfig/logback-${active}.xml</include>
-                    <include>application.yml</include>
-                    <include>application-${active}.yml</include>
-                    <include>*.properties</include>
+                    <include>**/*.xml</include>
                 </includes>
+            </resource>
+            <!--指定资源的位置-->
+            <resource>
+                <directory>src/main/resources</directory>
             </resource>
         </resources>
         <plugins>
@@ -109,15 +108,6 @@
                     <encoding>${compiler.encoding}</encoding>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring.boot.version}</version>
-                <configuration>
-                    <skip>true</skip>
-                </configuration>
-            </plugin>
-
         </plugins>
     </build>
 

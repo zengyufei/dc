@@ -10,8 +10,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>dc-mybatis-config</artifactId>
+    <packaging>jar</packaging>
 
-    <name>订餐系统-mybatis-配置</name>
+    <name>${project.name}-mybatis-配置</name>
 
     <dependencies>
         <dependency>

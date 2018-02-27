@@ -10,8 +10,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>dc-common-vo</artifactId>
+    <packaging>jar</packaging>
 
-    <name>订餐系统-vo-输入输出类</name>
+    <name>${project.name}-vo-输入输出模块</name>
 
     <dependencies>
         <dependency>

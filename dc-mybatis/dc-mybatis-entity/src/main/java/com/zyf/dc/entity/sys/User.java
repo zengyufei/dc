@@ -1,23 +1,78 @@
-/**
- * Copyright (C): 恒大集团©版权所有 Evergrande Group
- * FileName: User
- * Author:   zengyufei
- * Date:     2018/01/12
- * Description: TODO
- */
 package com.zyf.dc.entity.sys;
 
-import com.zyf.dc.base.BaseEntity;
+/**
+ * @version V1.0.0
+ */
+public class User implements LoginDetail, TokenDetail {
 
-public class User extends BaseEntity {
+    private String username;
+    private String password;
+    private String authorities;
+    private Long lastPasswordChange;
+    private char enable;
 
-    private String name;
-
-    public String getName() {
-        return name;
+    public User() {
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public User setUsername(String username) {
+        this.username = username;
+        return this;
+    }
+
+    public User setPassword(String password) {
+        this.password = password;
+        return this;
+    }
+
+    public String getAuthorities() {
+        return authorities;
+    }
+
+    public User setAuthorities(String authorities) {
+        this.authorities = authorities;
+        return this;
+    }
+
+    public Long getLastPasswordChange() {
+        return lastPasswordChange;
+    }
+
+    public User setLastPasswordChange(Long lastPasswordChange) {
+        this.lastPasswordChange = lastPasswordChange;
+        return this;
+    }
+
+    public User setEnable(char enable) {
+        this.enable = enable;
+        return this;
+    }
+
+    @Override
+    public String getUsername() {
+        return this.username;
+    }
+
+    @Override
+    public String getPassword() {
+        return this.password;
+    }
+
+    @Override
+    public boolean enable() {
+        if (this.enable == '1') {
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", authorities='" + authorities + '\'' +
+                ", lastPasswordChange=" + lastPasswordChange +
+                ", enable=" + enable +
+                '}';
     }
 }
