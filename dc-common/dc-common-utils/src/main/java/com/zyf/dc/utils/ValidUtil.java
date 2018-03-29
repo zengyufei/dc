@@ -1,12 +1,3 @@
-/**
- * Copyright (C): 恒大集团©版权所有 Evergrande Group
- * FileName: EnumUtils
- * Author:   zengyufei
- * Date:     2017-11-6 19:11
- * Description: jsr 303 验证的工具类
- */
-
-
 package com.zyf.dc.utils;
 
 
@@ -22,7 +13,6 @@ import java.util.Set;
 /**
  * jsr 303 验证的工具类
  * @author zengyufei
- * @create 2017-11-6
  * @since 1.0.0
  */
 @Component
@@ -32,11 +22,11 @@ public class ValidUtil {
     private Validator validator;
 
     public <T> Set<ConstraintViolation<T>> validate(T object, Class<?>... groups) {
-        return validator.validate(object, groups);
+        return this.validator.validate(object, groups);
     }
 
     public <T> Set<ConstraintViolation<T>> validateValue(Class<T> beanType, String propertyName, Object value, Class<?>... groups) {
-        return validator.validateValue(beanType, propertyName, value, groups);
+        return this.validator.validateValue(beanType, propertyName, value, groups);
     }
 
     /**
@@ -47,7 +37,7 @@ public class ValidUtil {
      * @return 第一个错误提示
      */
     public <T> void validAndReturnFirstErrorTips(T t, Class<?>... groups) {
-        Set<ConstraintViolation<T>> validate = validator.validate(t, groups);
+        Set<ConstraintViolation<T>> validate = this.validator.validate(t, groups);
         if (validate.size() > 0) {
             ConstraintViolation<T> next = validate.iterator().next();
             String message = next.getRootBeanClass().getName() + "-" + next.getPropertyPath() + "-" + next.getMessage();
@@ -65,7 +55,7 @@ public class ValidUtil {
      * @return 第一个错误提示
      */
     public <T> void validAndReturnFirstErrorTips(Class targetClass, String fieldName, Object obj, Class<?>... groups) {
-        Set<ConstraintViolation<T>> validate = validator.validateValue(targetClass, fieldName, obj, groups);
+        Set<ConstraintViolation<T>> validate = this.validator.validateValue(targetClass, fieldName, obj, groups);
         if (validate.size() > 0) {
             String message = targetClass.getName() + "-" + fieldName + "-" + validate.iterator().next().getMessage();
             throw new ValidError(message);

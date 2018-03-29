@@ -3,7 +3,7 @@ package com.zyf.dc.entity.sys;
 /**
  * @version V1.0.0
  */
-public class User implements LoginDetail, TokenDetail {
+public class UserAccountInfo implements LoginDetail, TokenDetail {
 
     private String username;
     private String password;
@@ -11,40 +11,35 @@ public class User implements LoginDetail, TokenDetail {
     private Long lastPasswordChange;
     private char enable;
 
-    public User() {
+    public UserAccountInfo() {
     }
 
-    public User setUsername(String username) {
+    public void setUsername(String username) {
         this.username = username;
-        return this;
     }
 
-    public User setPassword(String password) {
+    public void setPassword(String password) {
         this.password = password;
-        return this;
     }
 
     public String getAuthorities() {
         return authorities;
     }
 
-    public User setAuthorities(String authorities) {
+    public void setAuthorities(String authorities) {
         this.authorities = authorities;
-        return this;
     }
 
     public Long getLastPasswordChange() {
         return lastPasswordChange;
     }
 
-    public User setLastPasswordChange(Long lastPasswordChange) {
+    public void setLastPasswordChange(Long lastPasswordChange) {
         this.lastPasswordChange = lastPasswordChange;
-        return this;
     }
 
-    public User setEnable(char enable) {
+    public void setEnable(char enable) {
         this.enable = enable;
-        return this;
     }
 
     @Override
@@ -67,7 +62,7 @@ public class User implements LoginDetail, TokenDetail {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "UserAccountInfo{" +
                 "username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", authorities='" + authorities + '\'' +

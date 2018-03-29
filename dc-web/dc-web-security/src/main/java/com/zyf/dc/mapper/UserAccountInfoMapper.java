@@ -1,6 +1,6 @@
 package com.zyf.dc.mapper;
 
-import com.zyf.dc.entity.sys.User;
+import com.zyf.dc.entity.sys.UserAccountInfo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
@@ -10,9 +10,9 @@ import org.springframework.stereotype.Component;
  */
 @Mapper
 @Component
-public interface UserMapper {
+public interface UserAccountInfoMapper {
 
 
-    User getUserFromDatabase(@Param("username") String username);
+    UserAccountInfo getUserFromDatabase(@Param("username") String username);
 
 }

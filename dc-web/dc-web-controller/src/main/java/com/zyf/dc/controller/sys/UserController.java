@@ -1,7 +1,7 @@
 package com.zyf.dc.controller.sys;
 
 import com.zyf.dc.base.Msg;
-import com.zyf.dc.entity.sys.User;
+import com.zyf.dc.entity.sys.UserAccountInfo;
 import com.zyf.dc.service.sys.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -19,7 +19,7 @@ public class UserController {
 
     @GetMapping("index")
     public Msg index() {
-        return userService.list(new User());
+        return userService.list(new UserAccountInfo());
     }
 
 }

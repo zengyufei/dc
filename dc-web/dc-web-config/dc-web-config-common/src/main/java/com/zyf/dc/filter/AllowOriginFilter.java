@@ -1,12 +1,3 @@
-/**
- * Copyright (C): 恒大集团©版权所有 Evergrande Group
- * FileName: AllowOriginFilter.java
- * Author:   zengyufei
- * Date:     2017-11-6 19:11
- * Description: 请求支持跨域
- */
-
-
 package com.zyf.dc.filter;
 
 import org.springframework.stereotype.Component;

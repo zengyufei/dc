@@ -1,21 +1,12 @@
 package com.zyf.dc.filter;
-/**
- * Copyright (C): 恒大集团©版权所有 Evergrande Group
- * FileName: ValidatorAOP.java
- * Author:   zengyufei
- * Date:     2017-11-6 19:11
- * Description: service 参数验证拦截器，基于 JSR303
- */
 
 import com.zyf.dc.exceptions.ValidError;
 import com.zyf.dc.utils.ValidUtil;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.constraints.Min;
@@ -29,8 +20,8 @@ import java.lang.reflect.Method;
  * @author zengyufei
  * @since 1.0.0
  */
-@Aspect
-@Component
+//@Aspect
+//@Component
 public class ValidatorAOP {
 
     @Autowired
@@ -63,7 +54,7 @@ public class ValidatorAOP {
                 if (Validated.class.isInstance(annotation)) {
                     Validated validated = (Validated) annotation;
                     Class<?>[] groups = validated.value();
-                    validUtil.validAndReturnFirstErrorTips(args[i], groups);
+                    this.validUtil.validAndReturnFirstErrorTips(args[i], groups);
                 } else if (Min.class.isInstance(annotation)) {
                     Min min = (Min) annotation;
                     long value = min.value();

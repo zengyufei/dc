@@ -1,8 +1,8 @@
 package com.zyf.dc.service.impl;
 
 import com.zyf.dc.entity.SecurityModelFactory;
-import com.zyf.dc.entity.sys.User;
-import com.zyf.dc.mapper.UserMapper;
+import com.zyf.dc.entity.sys.UserAccountInfo;
+import com.zyf.dc.mapper.UserAccountInfoMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -13,10 +13,10 @@ import org.springframework.stereotype.Service;
  * @version V1.0.0
  */
 @Service
-public class UserDetailsServiceImpl implements UserDetailsService {
+public class UserAccountInfoDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
-    private UserMapper userMapper;
+    private UserAccountInfoMapper userMapper;
 
     /**
      * 获取 userDetail
@@ -26,7 +26,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        User user = this.userMapper.getUserFromDatabase(username);
+        UserAccountInfo user = this.userMapper.getUserFromDatabase(username);
 
         if (user == null) {
             throw new UsernameNotFoundException(String.format("No user found with username '%s'.", username));

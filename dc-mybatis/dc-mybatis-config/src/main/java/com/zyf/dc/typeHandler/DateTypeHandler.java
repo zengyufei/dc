@@ -1,10 +1,3 @@
-/**
- * Copyright (C): 恒大集团©版权所有 Evergrande Group
- * FileName: DateTypeHandler.java
- * Author:   zengyufei
- * Date:     2017-11-6 19:11
- * Description: mybatis 进行数据读写时自动类型转换
- */
 package com.zyf.dc.typeHandler;
 
 import org.apache.ibatis.type.BaseTypeHandler;

@@ -2,7 +2,7 @@ package com.zyf.dc.service.impl;
 
 import com.zyf.dc.entity.sys.LoginDetail;
 import com.zyf.dc.entity.sys.TokenDetail;
-import com.zyf.dc.mapper.UserMapper;
+import com.zyf.dc.mapper.UserAccountInfoMapper;
 import com.zyf.dc.service.LoginService;
 import com.zyf.dc.utils.TokenUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +14,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class LoginServiceImpl implements LoginService {
 
-    private final UserMapper userMapper;
+    private final UserAccountInfoMapper userMapper;
     private final TokenUtils tokenUtils;
 
     @Autowired
-    public LoginServiceImpl(UserMapper userMapper, TokenUtils tokenUtils) {
+    public LoginServiceImpl(UserAccountInfoMapper userMapper, TokenUtils tokenUtils) {
         this.userMapper = userMapper;
         this.tokenUtils = tokenUtils;
     }

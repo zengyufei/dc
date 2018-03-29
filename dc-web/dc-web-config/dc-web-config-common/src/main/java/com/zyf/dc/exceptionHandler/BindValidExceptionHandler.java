@@ -1,12 +1,3 @@
-/**
- * Copyright (C): 恒大集团©版权所有 Evergrande Group
- * FileName: BindValidExceptionHandler
- * Author:   zengyufei
- * Date:     2017/11/23
- * Description: jsr 303 错误捕捉类
- */
-
-
 package com.zyf.dc.exceptionHandler;
 
 import com.zyf.dc.base.Msg;

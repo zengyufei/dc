@@ -1,10 +1,3 @@
-/**
- * Copyright (C): 恒大集团©版权所有 Evergrande Group
- * FileName: Msg
- * Author:   zengyufei
- * Date:     2017-9-28 16:39
- * Description: 消息传输类。结果返回集。
- */
 package com.zyf.dc.base;
 
 import java.io.PrintStream;

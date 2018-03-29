@@ -32,11 +32,11 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
-        <dependency>
+        <!--<dependency>
             <groupId>com.zyf.code</groupId>
             <artifactId>dc-web-security</artifactId>
             <version>1.0-SNAPSHOT</version>
-        </dependency>
+        </dependency>-->
 
         <!--<dependency>
             <groupId>com.zyf.code</groupId>

@@ -1,10 +1,3 @@
-/**
- * Copyright (C): 恒大集团©版权所有 Evergrande Group
- * FileName: BaseEntity
- * Author:   zengyufei
- * Date:     2018/01/12
- * Description: TODO
- */
 package com.zyf.dc.base;
 
 import com.baomidou.mybatisplus.annotations.TableField;
@@ -38,7 +31,7 @@ public class BaseEntity {
     private Integer version;
 
     public long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(long id) {
@@ -46,7 +39,7 @@ public class BaseEntity {
     }
 
     public long getCreateId() {
-        return createId;
+        return this.createId;
     }
 
     public void setCreateId(long createId) {
@@ -54,7 +47,7 @@ public class BaseEntity {
     }
 
     public long getModifyId() {
-        return modifyId;
+        return this.modifyId;
     }
 
     public void setModifyId(long modifyId) {
@@ -62,7 +55,7 @@ public class BaseEntity {
     }
 
     public Date getCreateTime() {
-        return createTime;
+        return this.createTime;
     }
 
     public void setCreateTime(Date createTime) {
@@ -70,7 +63,7 @@ public class BaseEntity {
     }
 
     public Date getUpdateTime() {
-        return updateTime;
+        return this.updateTime;
     }
 
     public void setUpdateTime(Date updateTime) {
@@ -78,7 +71,7 @@ public class BaseEntity {
     }
 
     public boolean isDeleteFlag() {
-        return deleteFlag;
+        return this.deleteFlag;
     }
 
     public void setDeleteFlag(boolean deleteFlag) {

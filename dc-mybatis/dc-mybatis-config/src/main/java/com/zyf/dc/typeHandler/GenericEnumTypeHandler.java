@@ -1,10 +1,3 @@
-/**
- * Copyright (C): 恒大集团©版权所有 Evergrande Group
- * FileName: GenericEnumTypeHandler.java
- * Author:   zengyufei
- * Date:     2017-11-6 19:11
- * Description: mybatis 进行数据读写时自动类型转换
- */
 package com.zyf.dc.typeHandler;
 
 import com.zyf.dc.base.BaseEnum;
@@ -42,12 +35,12 @@ public class GenericEnumTypeHandler<E extends BaseEnum> extends BaseTypeHandler<
     }
 
     private E loadEnum(int index) {
-        for (E e : enums) {
+        for (E e : this.enums) {
             if (e.getIndex() == index) {
                 return e;
             }
         }
-        throw new IllegalArgumentException(type.getName() + "  unknown enumerated type  index:" + index);
+        throw new IllegalArgumentException(this.type.getName() + "  unknown enumerated type  index:" + index);
     }
 
     @Override

@@ -1,10 +1,3 @@
-/**
- * Copyright (C): 恒大集团©版权所有 Evergrande Group
- * FileName: 枚举父类
- * Author:   zengyufei
- * Date:     2017/11/20
- * Description: 用于被枚举类型继承
- */
 package com.zyf.dc.base;
 
 /**

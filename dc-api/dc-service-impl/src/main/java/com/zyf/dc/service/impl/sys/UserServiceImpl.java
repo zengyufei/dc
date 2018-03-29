@@ -1,7 +1,7 @@
 package com.zyf.dc.service.impl.sys;
 
 import com.zyf.dc.base.Msg;
-import com.zyf.dc.entity.sys.User;
+import com.zyf.dc.entity.sys.UserAccountInfo;
 import com.zyf.dc.service.sys.UserService;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
 
     @Override
-    public Msg list(User user) {
+    public Msg list(UserAccountInfo user) {
         return Msg.ok("hhahaha");
     }
 }

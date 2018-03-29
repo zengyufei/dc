@@ -1,14 +1,6 @@
-/**
- * Copyright (C): 恒大集团©版权所有 Evergrande Group
- * FileName: DateConverConfiguration.java
- * Author:   zengyufei
- * Date:     2017-11-6 19:11
- * Description: 绑定前端 date 类型参数转换器的注册
- */
 package com.zyf.dc;
 
-import com.zyf.dc.convers.StringToCalendarConverter;
-import com.zyf.dc.convers.StringToDateConverter;
+import com.zyf.dc.converter.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.support.GenericConversionService;
@@ -33,13 +25,19 @@ public class DateConverConfiguration {
      */
     @PostConstruct
     public void initEditableValidation() {
-        ConfigurableWebBindingInitializer initializer = (ConfigurableWebBindingInitializer) handlerAdapter
+        ConfigurableWebBindingInitializer initializer = (ConfigurableWebBindingInitializer) this.handlerAdapter
                 .getWebBindingInitializer();
-        if (initializer.getConversionService() != null) {
+        if (initializer != null && null != initializer.getConversionService()) {
             GenericConversionService genericConversionService = (GenericConversionService) initializer
                     .getConversionService();
             genericConversionService.addConverter(new StringToDateConverter());
             genericConversionService.addConverter(new StringToCalendarConverter());
+            genericConversionService.addConverter(new StringToIntegerListConverter());
+            genericConversionService.addConverter(new StringToListConverter());
+            genericConversionService.addConverter(new StringToBigDecimalConverter());
+
+            genericConversionService.addConverter(new StringArrayToIntegerListConverter());
+            genericConversionService.addConverter(new StringArrayToStringListConverter());
         }
     }
 

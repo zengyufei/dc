@@ -1,10 +1,3 @@
-/**
- * Copyright (C): 恒大集团©版权所有 Evergrande Group
- * FileName: GlobalExceptionHandler
- * Author:   xiaobinwei
- * Date:     2017/11/15
- * Description:
- */
 package com.zyf.dc.exceptionHandler;
 
 /**

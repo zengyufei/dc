@@ -1,12 +1,3 @@
-/**
- * Copyright (C): 恒大集团©版权所有 Evergrande Group
- * FileName: ValidConfiguration
- * Author:   zengyufei
- * Date:     2017/11/23
- * Description: jsr 303 配置类
- */
-
-
 package com.zyf.dc;
 
 import com.alibaba.fastjson.serializer.SerializerFeature;
@@ -68,8 +59,8 @@ public class ValidConfiguration extends WebMvcConfigurerAdapter {
     public MessageSource messageSource() {
         ResourceBundleMessageSource resourceBundleMessageSource = new ResourceBundleMessageSource();
         resourceBundleMessageSource.setUseCodeAsDefaultMessage(false);
-        resourceBundleMessageSource.setDefaultEncoding(encoding);
-        resourceBundleMessageSource.setBasenames(basename.split(","));
+        resourceBundleMessageSource.setDefaultEncoding(this.encoding);
+        resourceBundleMessageSource.setBasenames(this.basename.split(","));
         return resourceBundleMessageSource;
     }
 

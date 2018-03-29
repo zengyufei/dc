@@ -19,6 +19,7 @@
         <module>dc-common-utils</module>
         <module>dc-common-config</module>
         <module>dc-common-base</module>
+        <module>dc-common-valid</module>
     </modules>
 
     <dependencies>

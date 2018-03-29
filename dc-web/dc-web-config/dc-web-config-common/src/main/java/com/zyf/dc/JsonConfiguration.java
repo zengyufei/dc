@@ -1,10 +1,3 @@
-/**
- * Copyright (C): 恒大集团©版权所有 Evergrande Group
- * FileName: JsonConfiguration
- * Author:   zengyufei
- * Date:     2017/11/23
- * Description: json 配置类
- */
 package com.zyf.dc;
 
 import com.alibaba.fastjson.serializer.SerializerFeature;
@@ -24,7 +17,6 @@ import java.util.List;
 /**
  * json 配置类
  * @author zengyufei
- * @create 2017/11/23
  * @since 1.0.0
  */
 @Configuration
@@ -55,7 +47,7 @@ public class JsonConfiguration {
         );
         converter.setFastJsonConfig(fastJsonConfig);
         // 处理中文乱码问题
-        List<MediaType> fastMediaTypes = new ArrayList<MediaType>();
+        List<MediaType> fastMediaTypes = new ArrayList<>();
         fastMediaTypes.add(MediaType.APPLICATION_JSON_UTF8);
         converter.setSupportedMediaTypes(fastMediaTypes);
         return new HttpMessageConverters((HttpMessageConverter<?>) converter);
